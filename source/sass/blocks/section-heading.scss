@@ -1,0 +1,16 @@
+.section-heading {
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0;
+
+  color: $color-text-additional;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 34px;
+    line-height: 50px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    font-size: 50px;
+  }
+}
