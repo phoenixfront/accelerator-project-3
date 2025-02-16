@@ -1,4 +1,19 @@
-// Vendor
-// ---------------------------------
-
+// vendor
 @import "vendor/normalize";
+
+// variables
+@import "./common/variables";
+
+// basic styles
+@import "./common/fonts";
+@import "./common/global";
+@import "./common/keyframes";
+
+// blocks
+@import "./blocks/button";
+@import "./blocks/page";
+@import "./blocks/header";
+@import "./blocks/logo";
+@import "./blocks/header-menu";
+@import "./blocks/submenu";
+@import "./blocks/hero";

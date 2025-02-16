@@ -1,0 +1,33 @@
+.submenu {
+  margin: 0;
+  padding: 0 0 0 16px;
+  list-style-type: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, margin 0.3s ease-in-out;
+}
+
+.submenu--opened {
+  margin-top: 20px;
+  max-height: 1000px;
+}
+
+.submenu__link {
+  color: rgba($color-text-white, 0.7);
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $color-text-white;
+  }
+}

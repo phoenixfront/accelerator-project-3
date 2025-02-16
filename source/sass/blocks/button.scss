@@ -1,0 +1,113 @@
+.button {
+  position: relative;
+  padding: 18px 71px 20px 19px;
+
+  font-weight: 500;
+  line-height: 14px;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 0.28px;
+  color: $color-text-additional;
+
+  background-color: $color-bg-additional;
+  border: 1px solid $color-text-additional;
+  border-radius: 30px;
+
+  cursor: pointer;
+
+  transition: color 0.3s ease, background-color 0.3s ease;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease;
+  }
+
+  &::before {
+    width: 46px;
+    height: 46px;
+    right: 4px;
+    background-color: $color-bg-accent;
+    border-radius: 44px;
+  }
+
+  &:hover {
+    color: $color-text-white;
+    background-color: $color-bg-accent;
+
+    &::before {
+      background-color: $color-bg-additional;
+    }
+
+    &::after {
+      background-color: $color-bg-accent;
+    }
+  }
+
+  &:active {
+    color: rgba($color-text-white, 0.3);
+
+    &::after {
+      background-color: rgba($color-bg-accent, 0.3);
+    }
+  }
+}
+
+
+.button--arrow {
+  display: inline-block;
+  padding: 16px 59px 16px 21px;
+
+  font-size: 12px;
+  line-height: 12px;
+
+  &::before {
+    width: 34px;
+    height: 34px;
+    right: 5px;
+  }
+
+  &::after {
+    width: 14px;
+    height: 14px;
+
+    right: 15px;
+    top: 14px;
+
+    transform: rotate(-45deg);
+
+    background-color: $color-bg-additional;
+    mask-image: url("/__spritemap#sprite-arrow-right-view");
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 21px 81px 21px 31px;
+
+    font-size: 14px;
+    line-height: 14px;
+
+    &::before {
+      width: 46px;
+      height: 46px;
+      right: 5px;
+    }
+
+    &::after {
+      width: 16px;
+      height: 16px;
+
+      right: 20px;
+      top: 20px;
+
+      transform: rotate(-45deg);
+
+      background-color: $color-bg-additional;
+      mask-image: url("/__spritemap#sprite-arrow-right-view");
+    }
+  }
+}

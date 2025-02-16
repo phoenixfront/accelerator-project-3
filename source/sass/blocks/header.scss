@@ -1,0 +1,55 @@
+.header {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  z-index: 2;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-top: 12px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-top: 11px;
+  }
+}
+
+.header__navigation {
+  position: relative;
+}
+
+.header__button {
+  width: 136px;
+
+  &::after {
+    width: 18px;
+    height: 8px;
+    right: 18px;
+    background-color: $color-bg-additional;
+    mask-image: url("/__spritemap#sprite-burger-view");
+  }
+
+  transition: width 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+.header__button--opened {
+  width: 290px;
+  background-color: $color-bg-accent;
+  color: $color-text-white;
+
+  &::before {
+    background-color: $color-bg-additional;
+  }
+
+  &::after {
+    width: 16px;
+    height: 16px;
+    background-color: $color-bg-accent;
+    mask-image: url("/__spritemap#sprite-cross-view");
+  }
+}
