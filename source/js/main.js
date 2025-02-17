@@ -7,6 +7,8 @@ import './modules/hero-slider.js';
 
 import { checkWebPSupport } from './utils/checkwebp.js';
 import { initHeader } from './modules/header.js';
+import { initProgramsSlider } from './modules/programs-slider.js';
 
 checkWebPSupport();
 initHeader();
+initProgramsSlider();

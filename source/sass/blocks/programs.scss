@@ -1,0 +1,411 @@
+.programs {
+}
+
+.programs__container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @media (min-width: $breakpoint-tablet) {
+    position: relative;
+    display: block;
+    padding-right: 0;
+    padding-top: 49px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding-top: 61px;
+    padding-right: 100px;
+  }
+}
+
+.programs__heading {
+  margin: 0;
+  padding: 6px 0 4px 0;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 4px 0 4px 0;
+  }
+}
+
+.programs__link {
+  order: 1;
+  width: 205px;
+
+  padding: 15px 61px 15px 30px;
+
+  &::before {
+    right: 4px;
+  }
+
+  &::after {
+    width: 15px;
+    height: 15px;
+    top: 13px;
+    right: 14px;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    position: absolute;
+
+    width: 234px;
+    top: 50px;
+    right: 45px;
+
+    padding: 20px 61px 20px 30px;
+
+    &::after {
+      top: 19px;
+      right: 20px;
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    top: 62px;
+    right: 100px;
+  }
+}
+
+.programs__slider-wrapper {
+  position: relative;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-top: 39px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding-top: 41px;
+  }
+}
+
+.programs__slider {
+}
+
+.programs__slider-buttons {
+  position: absolute;
+  z-index: 2;
+  top: -56px;
+  right: 0;
+
+  @media (min-width: $breakpoint-tablet) {
+    bottom: 8px;
+    right: 45px;
+    top: auto;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    right: 0;
+  }
+}
+
+.programs__slider-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-bottom: 70px;
+  }
+}
+
+.swiper-slide.programs__slide {
+  position: relative;
+  min-height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 12px;
+
+  &::before {
+    content: "";
+    position: absolute;
+
+    background-color: rgba($color-overlay-photo, 0.2);
+    border-radius: 12px;
+
+    inset: 0;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    min-height: 420px;
+  }
+}
+
+.programs__slide--interships {
+  .webp & {
+    background-image: url("../../img/programs/interships-small@1x.webp");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/programs/interships-small@2x.webp");
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      background-image: url("../../img/programs/interships-medium@1x.webp");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/programs/interships-medium@2x.webp");
+      }
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      background-image: url("../../img/programs/interships-large@1x.webp");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/programs/interships-large@2x.webp");
+      }
+    }
+  }
+
+  .no-webp & {
+    background-image: url("../../img/programs/interships-small@1x.jpg");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/programs/interships-small@2x.jpg");
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      background-image: url("../../img/programs/interships-medium@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/programs/interships-medium@2x.jpg");
+      }
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      background-image: url("../../img/programs/interships-large@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/programs/interships-large@2x.jpg");
+      }
+    }
+  }
+}
+
+.programs__slide--volunteering {
+  .webp & {
+    background-image: url("../../img/programs/volunteering-small@1x.webp");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/programs/volunteering-small@2x.webp");
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      background-image: url("../../img/programs/volunteering-medium@1x.webp");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/programs/volunteering-medium@2x.webp");
+      }
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      background-image: url("../../img/programs/volunteering-large@1x.webp");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/programs/volunteering-large@2x.webp");
+      }
+    }
+  }
+
+  .no-webp & {
+    background-image: url("../../img/programs/volunteering-small@1x.jpg");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/programs/volunteering-small@2x.jpg");
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      background-image: url("../../img/programs/volunteering-medium@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/programs/volunteering-medium@2x.jpg");
+      }
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      background-image: url("../../img/programs/volunteering-large@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/programs/volunteering-large@2x.jpg");
+      }
+    }
+  }
+}
+
+.programs__slide--studies {
+  .webp & {
+    background-image: url("../../img/programs/studies-small@1x.webp");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/programs/studies-small@2x.webp");
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      background-image: url("../../img/programs/studies-medium@1x.webp");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/programs/studies-medium@2x.webp");
+      }
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      background-image: url("../../img/programs/studies-large@1x.webp");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/programs/studies-large@2x.webp");
+      }
+    }
+  }
+
+  .no-webp & {
+    background-image: url("../../img/programs/studies-small@1x.jpg");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/programs/studies-small@2x.jpg");
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      background-image: url("../../img/programs/studies-medium@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/programs/studies-medium@2x.jpg");
+      }
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      background-image: url("../../img/programs/studies-large@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/programs/studies-large@2x.jpg");
+      }
+    }
+  }
+}
+
+
+.programs__slide-heading {
+  position: relative;
+  width: 146px;
+  margin: 0 0 -1px 10px;
+  padding: 18px 10px 7px 18px;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+
+  color: $color-text-additional;
+  background-color: $color-bg-additional;
+  border-radius: 12px 12px 0 0;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-left: 20px;
+    padding: 19px 10px 6px 18px;
+    width: 173px;
+
+    font-size: 20px;
+    line-height: 14px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: 18px 1px 7px 18px;
+    width: 194px;
+
+    font-size: 24px;
+    line-height: 17px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+
+    width: 21px;
+    height: 21px;
+
+    bottom: 0;
+    right: -20px;
+
+    transform: rotate(-90deg);
+
+    background-image: url("../../img/sprite/angle.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.programs__slide-wrapper {
+  position: relative;
+
+  min-height: 69px;
+  margin: 0 10px 18px 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: $color-bg-additional;
+  border-radius: 0 12px 12px 12px;
+
+  @media (min-width: $breakpoint-tablet) {
+    min-height: 87px;
+    margin: 0 20px 10px 20px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    min-height: 82px;
+    margin: 0 51px 17px 20px;
+  }
+
+}
+
+.programs__slide-wrapper p {
+  margin: 0;
+  padding: 0px 55px 1px 18px;
+
+  font-size: 12px;
+  line-height: 14px;
+
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 0px 70px 3px 18px;
+
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: 0px 70px 4px 18px;
+
+    line-height: 18px;
+  }
+
+}
+
+.programs__slide-link {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+
+  @media (min-width: $breakpoint-tablet) {
+    top: 27px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    top: 25px;
+  }
+}
+
+.programs__scrollbar {
+  @media (min-width: $breakpoint-tablet) {
+    position: absolute;
+    bottom: 30px;
+  }
+}

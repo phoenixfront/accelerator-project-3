@@ -1,0 +1,47 @@
+.slider-scrollbar.swiper-scrollbar.swiper-scrollbar-horizontal {
+  display: none;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: block;
+    width: calc(78% - 2 * var(--swiper-scrollbar-sides-offset, 1%));
+
+    --swiper-scrollbar-bg-color: var(--blue-overlay, rgba(49, 109, 194, 0.2));
+    --swiper-scrollbar-bottom: 18px;
+    --swiper-scrollbar-drag-bg-color: var(--primary, #316dc2);
+    --swiper-scrollbar-sides-offset: 0.01%;
+    --swiper-scrollbar-size: 2px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: calc(91.5% - 2 * var(--swiper-scrollbar-sides-offset, 1%));
+  }
+}
+
+.slider-scrollbar .swiper-scrollbar-drag {
+  &:hover {
+    --swiper-scrollbar-drag-bg-color: var(--state-active, #275699);
+  }
+
+  &:active {
+    --swiper-scrollbar-drag-bg-color: var(--primary, #316dc2);
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    position: relative;
+
+    cursor: pointer;
+  }
+
+  &::before {
+    @media (min-width: $breakpoint-tablet) {
+      content: "";
+      position: absolute;
+      top: 50%;
+
+      width: 100%;
+      height: 30px;
+
+      transform: translateY(-50%);
+    }
+  }
+}
