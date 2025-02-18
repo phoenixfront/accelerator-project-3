@@ -1,4 +1,7 @@
 .programs {
+  @media (min-width: $breakpoint-desktop) {
+    padding-bottom: 10px;
+  }
 }
 
 .programs__container {
@@ -14,6 +17,7 @@
     display: block;
     padding-right: 0;
     padding-top: 49px;
+    padding-bottom: 42px;
   }
 
   @media (min-width: $breakpoint-desktop) {
@@ -24,10 +28,10 @@
 
 .programs__heading {
   margin: 0;
-  padding: 6px 0 4px 0;
+  padding: 6px 0 4px;
 
   @media (min-width: $breakpoint-tablet) {
-    padding: 4px 0 4px 0;
+    padding: 4px 0;
   }
 }
 
@@ -79,9 +83,6 @@
   @media (min-width: $breakpoint-desktop) {
     padding-top: 41px;
   }
-}
-
-.programs__slider {
 }
 
 .programs__slider-buttons {
@@ -345,48 +346,46 @@
   position: relative;
 
   min-height: 69px;
-  margin: 0 10px 18px 10px;
+  margin: 0 10px 18px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   background-color: $color-bg-additional;
-  border-radius: 0 12px 12px 12px;
+  border-radius: 0 12px 12px;
 
   @media (min-width: $breakpoint-tablet) {
     min-height: 87px;
-    margin: 0 20px 10px 20px;
+    margin: 0 20px 10px;
   }
 
   @media (min-width: $breakpoint-desktop) {
     min-height: 82px;
     margin: 0 51px 17px 20px;
   }
-
 }
 
 .programs__slide-wrapper p {
   margin: 0;
-  padding: 0px 55px 1px 18px;
+  padding: 0 55px 1px 18px;
 
   font-size: 12px;
   line-height: 14px;
 
 
   @media (min-width: $breakpoint-tablet) {
-    padding: 0px 70px 3px 18px;
+    padding: 0 70px 3px 18px;
 
     font-size: 14px;
     line-height: 20px;
   }
 
   @media (min-width: $breakpoint-desktop) {
-    padding: 0px 70px 4px 18px;
+    padding: 0 70px 4px 18px;
 
     line-height: 18px;
   }
-
 }
 
 .programs__slide-link {
