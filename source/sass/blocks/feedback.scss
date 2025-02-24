@@ -1,0 +1,221 @@
+.feedback {
+  padding: 37px 15px 40px;
+
+  background-color: var(--white, #ffffff);
+
+  @media (min-width: $vp-768) {
+    padding: 55px 80px 60px;
+  }
+
+  @media (min-width: $vp-1440) {
+    padding-top: 53px;
+  }
+
+  &--style-blue {
+    position: relative;
+
+    padding: 83px 10px 80px;
+
+    background-color: var(--beige, #f0efe9);
+
+    @media (min-width: $vp-768) {
+      padding: 50px 58px;
+    }
+
+    @media (min-width: $vp-1440) {
+      padding: 60px 100px;
+    }
+  }
+}
+
+.feedback--style-blue::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  left: 0;
+
+  width: 100%;
+  height: 753px;
+
+  background-image: url("../img/background/form-mobile@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @media (resolution >= 2dppx) {
+    background-image: url("../img/background/form-mobile@2x.jpg");
+  }
+
+  @media (min-width: $vp-768) {
+    display: none;
+  }
+}
+
+.feedback__container {
+  .feedback--style-blue & {
+    position: relative;
+    z-index: 1;
+
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 17px 15px 27px;
+
+    color: var(--white, #ffffff);
+
+    background-color: var(--primary, #316dc2);
+    border-radius: 16px;
+
+    @media (min-width: $vp-768) {
+      position: relative;
+
+      max-width: 1240px;
+      padding: 41px var(--padding-right) 36px 40px;
+
+      --padding-right: 38.4%;
+
+      background-image: url("../img/background/form-tablet@1x.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../img/background/form-tablet@2x.jpg");
+      }
+    }
+
+    @media (min-width: $vp-1440) {
+      padding: 44px 820px 40px 70px;
+
+      background-image: url("../img/background/form-desktop@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../img/background/form-desktop@2x.jpg");
+      }
+    }
+  }
+}
+
+.feedback--style-blue .feedback__container::before {
+  @media (min-width: $vp-768) {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    width: calc(100% - var(--padding-right) + 40px);
+    height: 100%;
+
+    background-color: var(--primary, #316dc2);
+    border-radius: 16px;
+  }
+
+  @media (min-width: $vp-1440) {
+    width: 490px;
+  }
+}
+
+.feedback__title {
+  margin: 0 0 14px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
+  color: var(--primary, #316dc2);
+
+  @media (min-width: $vp-768) {
+    margin-bottom: 17px;
+
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  @media (min-width: $vp-1440) {
+    margin-bottom: 14px;
+
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .feedback--style-blue & {
+    margin: 0 0 12px;
+
+    text-align: left;
+    color: var(--white, #ffffff);
+
+    @media (min-width: $vp-768) {
+      margin-bottom: 31px;
+    }
+
+    @media (min-width: $vp-1440) {
+      margin-bottom: 34px;
+    }
+  }
+}
+
+.feedback__text {
+  margin: 0 0 25px;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+
+  @media (min-width: $vp-768) {
+    margin-bottom: 30px;
+    padding: 0;
+
+    font-size: 16px;
+  }
+
+  @media (min-width: $vp-1440) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .feedback--style-blue & {
+    margin-bottom: 21px;
+    padding: 0;
+
+    text-align: left;
+    color: var(--beige, #f0efe9);
+
+    opacity: 0.9;
+
+    @media (min-width: $vp-768) {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.feedback__button {
+  justify-content: center;
+  width: 100%;
+  padding-top: 14px;
+  padding-bottom: 14px;
+
+  @media (min-width: $vp-768) {
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 19px 79px 19px 29px;
+  }
+
+  .feedback--style-blue & {
+    width: 260px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    @media (min-width: $vp-768) {
+      width: 352px;
+      margin: 0 auto 0 0;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+}

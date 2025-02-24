@@ -3,10 +3,6 @@
   flex-wrap: wrap;
 
   gap: 8px;
-
-  @media (min-width: $breakpoint-tablet) {
-    gap: 10px;
-  }
 }
 
 .slider-buttons__button {

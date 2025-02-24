@@ -1,25 +1,33 @@
-// vendor
+// Vendor
 @import "vendor/normalize";
 
-// variables
-@import "./common/variables";
+// Переменные
+@import "global/variables";
 
-// basic styles
-@import "./common/fonts";
-@import "./common/global";
-@import "./common/keyframes";
+// Базовые стили
+@import "global/fonts";
+@import "global/global";
+@import "global/utils";
 
-// blocks
-@import "./blocks/button";
-@import "./blocks/page";
-@import "./blocks/header";
-@import "./blocks/logo";
-@import "./blocks/header-menu";
-@import "./blocks/submenu";
-@import "./blocks/hero";
-@import "./blocks/section-heading";
-@import "./blocks/about";
-@import "./blocks/programs";
-@import "./blocks/slider-buttons";
-@import "./blocks/slider-scrollbar";
-@import "./blocks/grant";
+// Блоки компонентов
+@import "blocks/button";
+@import "blocks/button-icon";
+@import "blocks/title";
+@import "blocks/logo";
+@import "blocks/slider-buttons";
+@import "blocks/slider-scrollbar";
+@import "blocks/social";
+@import "blocks/page";
+@import "blocks/header";
+@import "blocks/hero";
+@import "blocks/about";
+@import "blocks/modal";
+@import "blocks/form";
+@import "blocks/feedback";
+@import "blocks/programs";
+@import "blocks/conditions";
+@import "blocks/news";
+@import "blocks/faq";
+@import "blocks/reviews";
+@import "blocks/contacts";
+@import "blocks/footer";

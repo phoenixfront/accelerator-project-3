@@ -1,6 +1,4 @@
 .page {
-  position: relative;
-
   display: flex;
   flex-direction: column;
   min-width: 320px;
@@ -10,30 +8,31 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  font-family: $font-body;
-  color: $color-text-main;
+  font-family: $font-family;
+  color: var(--text, #484848);
 
-  background-color: $color-bg-main;
+  background-color: var(--beige, #f0efe9);
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $vp-768) {
     font-size: 16px;
+    line-height: 20px;
   }
 
-  @media (min-width: $breakpoint-desktop) {
+  @media (min-width: $vp-1440) {
     line-height: 26px;
   }
 }
 
 .page__container {
-  max-width: $breakpoint-desktop;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 15px;
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $vp-768) {
     padding: 0 45px;
   }
 
-  @media (min-width: $breakpoint-desktop) {
+  @media (min-width: $vp-1440) {
     padding: 0 100px;
   }
 }
@@ -44,4 +43,9 @@
 
 .page__footer {
   margin-top: auto;
+}
+
+.page__modal-open {
+  height: 100vh;
+  overflow: hidden;
 }

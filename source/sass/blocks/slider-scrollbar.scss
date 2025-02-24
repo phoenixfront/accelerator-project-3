@@ -1,7 +1,7 @@
 .slider-scrollbar.swiper-scrollbar.swiper-scrollbar-horizontal {
   display: none;
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $vp-768) {
     display: block;
     width: calc(78% - 2 * var(--swiper-scrollbar-sides-offset, 1%));
 
@@ -12,7 +12,7 @@
     --swiper-scrollbar-size: 2px;
   }
 
-  @media (min-width: $breakpoint-desktop) {
+  @media (min-width: $vp-1440) {
     width: calc(91.5% - 2 * var(--swiper-scrollbar-sides-offset, 1%));
   }
 }
@@ -26,14 +26,14 @@
     --swiper-scrollbar-drag-bg-color: var(--primary, #316dc2);
   }
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $vp-768) {
     position: relative;
 
     cursor: pointer;
   }
 
   &::before {
-    @media (min-width: $breakpoint-tablet) {
+    @media (min-width: $vp-768) {
       content: "";
       position: absolute;
       top: 50%;

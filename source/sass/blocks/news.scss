@@ -1,0 +1,789 @@
+.news {
+  background-color: var(--beige, #f0efe9);
+}
+
+.news__wrapper {
+  padding-top: 51px;
+
+  @media (min-width: $vp-768) {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 50px 45px 0;
+  }
+
+  @media (min-width: $vp-1440) {
+    max-width: 1440px;
+    padding: 60px 100px 0;
+  }
+}
+
+.news__title {
+  margin: 0 auto 23px;
+  padding: 0 15px;
+
+  text-align: center;
+
+  @media (min-width: $vp-768) {
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: $vp-1440) {
+    margin-bottom: 40px;
+  }
+}
+
+.news__tabs-list {
+  display: flex;
+  margin: 0 auto;
+  padding: 0 0 24px 15px;
+  overflow: scroll;
+
+  list-style-type: none;
+
+  gap: 9px;
+  scrollbar-width: none;
+
+  @media (min-width: $vp-768) {
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    padding-bottom: 0;
+    padding-left: 3px;
+
+    gap: 6px;
+  }
+
+  @media (min-width: $vp-1440) {
+    margin-bottom: 40px;
+
+    gap: 25px;
+  }
+}
+
+.news__tab {
+  padding: 10px 14px;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  text-align: center;
+  color: var(--primary, #316dc2);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  cursor: pointer;
+  opacity: 0.6;
+
+  transition: opacity 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+
+  @media (min-width: $vp-768) {
+    padding: 14px 20px;
+
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  @media (min-width: $vp-1440) {
+    min-width: 126px;
+    padding: 14px 3px;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:focus-visible {
+    color: var(--primary, #316dc2);
+
+    background-color: var(--white, #ffffff);
+    border-color: var(--white, #ffffff);
+    opacity: 1;
+  }
+
+  &:active {
+    color: var(--state-active, #275699);
+
+    background-color: transparent;
+    border-color: var(--state-active, #275699);
+    opacity: 1;
+  }
+
+  &:disabled {
+    color: var(--state-disabled, #a9afb7);
+
+    background-color: transparent;
+    border-color: transparent;
+    cursor: default;
+    opacity: 1;
+  }
+}
+
+.news__tab.is-current {
+  border-color: var(--primary, #316dc2);
+  cursor: default;
+  opacity: 1;
+
+  pointer-events: none;
+}
+
+.swiper.news__slider {
+  position: relative;
+
+  width: 320px;
+  margin: 0 auto;
+  padding: 0 15px 53px;
+
+  @media (min-width: $vp-768) {
+    width: 678px;
+    padding-right: 0;
+    padding-bottom: 55px;
+    padding-left: 0;
+  }
+
+  @media (min-width: $vp-1440) {
+    width: 1240px;
+    padding-bottom: 66px;
+  }
+}
+
+.news__slider-list.swiper-wrapper {
+  height: 590px;
+  margin: 0 0 25px;
+  padding: 0;
+
+  list-style-type: none;
+
+  @media (min-width: $vp-768) {
+    height: 730px;
+    margin-bottom: 35px;
+  }
+
+  @media (min-width: $vp-1440) {
+    height: initial;
+    min-height: 400px;
+    margin-bottom: 45px;
+  }
+}
+
+.news__slide {
+  position: relative;
+
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  background-color: var(--blue-overlay, rgba(49, 109, 194, 0.2));
+  background-repeat: no-repeat;
+  background-position: left 50% top 30%;
+  background-size: cover;
+  border-radius: 13px;
+}
+
+.news__slide--internships {
+  .webp & {
+    background-image: url("../../img/news/interview-small@1x.webp");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/news/interview-small@2x.webp");
+    }
+
+    @media (min-width: $vp-768) {
+      background-image: url("../../img/news/interview-medium@1x.webp");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/interview-medium@2x.webp");
+      }
+    }
+
+    @media (min-width: $vp-1440) {
+      background-image: url("../../img/news/interview-large@1x.webp");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/interview-large@2x.webp");
+      }
+    }
+  }
+
+  .no-webp & {
+    background-image: url("../../img/news/interview-small@1x.jpg");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/news/interview-small@2x.jpg");
+    }
+
+    @media (min-width: $vp-768) {
+      background-image: url("../../img/news/interview-medium@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/interview-medium@2x.jpg");
+      }
+    }
+
+    @media (min-width: $vp-1440) {
+      background-image: url("../../img/news/interview-large@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/interview-large@2x.jpg");
+      }
+    }
+  }
+}
+
+.news__slide--trips {
+  .webp & {
+    background-image: url("../../img/news/travel-small@1x.webp");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/news/travel-small@2x.webp");
+    }
+
+    @media (min-width: $vp-768) {
+      background-image: url("../../img/news/travel-medium@1x.webp");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/travel-medium@2x.webp");
+      }
+    }
+
+    @media (min-width: $vp-1440) {
+      background-image: url("../../img/news/travel-large@1x.webp");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/travel-large@2x.webp");
+      }
+    }
+  }
+
+  .no-webp & {
+    background-image: url("../../img/news/travel-small@1x.jpg");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/news/travel-small@2x.jpg");
+    }
+
+    @media (min-width: $vp-768) {
+      background-image: url("../../img/news/travel-medium@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/travel-medium@2x.jpg");
+      }
+    }
+
+    @media (min-width: $vp-1440) {
+      background-image: url("../../img/news/travel-large@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/travel-large@2x.jpg");
+      }
+    }
+  }
+}
+
+.news__slide--volunteering {
+  .webp & {
+    background-image: url("../../img/news/volunteering-small@1x.webp");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/news/volunteering-small@2x.webp");
+    }
+
+    @media (min-width: $vp-768) {
+      background-image: url("../../img/news/volunteering-medium@1x.webp");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/volunteering-medium@2x.webp");
+      }
+    }
+
+    @media (min-width: $vp-1440) {
+      background-image: url("../../img/news/volunteering-large@1x.webp");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/volunteering-large@2x.webp");
+      }
+    }
+  }
+
+  .no-webp & {
+    background-image: url("../../img/news/volunteering-small@1x.jpg");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/news/volunteering-small@2x.jpg");
+    }
+
+    @media (min-width: $vp-768) {
+      background-image: url("../../img/news/volunteering-medium@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/volunteering-medium@2x.jpg");
+      }
+    }
+
+    @media (min-width: $vp-1440) {
+      background-image: url("../../img/news/volunteering-large@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/volunteering-large@2x.jpg");
+      }
+    }
+  }
+}
+
+.news__slide--career {
+  .webp & {
+    background-image: url("../../img/news/career-small@1x.webp");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/news/career-small@2x.webp");
+    }
+
+    @media (min-width: $vp-768) {
+      background-image: url("../../img/news/career-medium@1x.webp");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/career-medium@2x.webp");
+      }
+    }
+
+    @media (min-width: $vp-1440) {
+      background-image: url("../../img/news/career-large@1x.webp");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/career-large@2x.webp");
+      }
+    }
+  }
+
+  .no-webp & {
+    background-image: url("../../img/news/career-small@1x.jpg");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/news/career-small@2x.jpg");
+    }
+
+    @media (min-width: $vp-768) {
+      background-image: url("../../img/news/career-medium@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/career-medium@2x.jpg");
+      }
+    }
+
+    @media (min-width: $vp-1440) {
+      background-image: url("../../img/news/career-large@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/career-large@2x.jpg");
+      }
+    }
+  }
+}
+
+.news__slide:nth-child(3n + 1).news__slide--internships {
+  .webp & {
+    @media (min-width: $vp-1440) {
+      background-image: url("../../img/news/interview-large-wide@1x.webp");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/interview-large-wide@2x.webp");
+      }
+    }
+  }
+
+  .no-webp & {
+    @media (min-width: $vp-1440) {
+      background-image: url("../../img/news/interview-large-wide@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/interview-large-wide@2x.jpg");
+      }
+    }
+  }
+}
+
+.news__slide:nth-child(3n + 1).news__slide--trips {
+  .webp & {
+    @media (min-width: $vp-1440) {
+      background-image: url("../../img/news/career-large-wide@1x.webp");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/career-large-wide@2x.webp");
+      }
+    }
+  }
+
+  .no-webp & {
+    @media (min-width: $vp-1440) {
+      background-image: url("../../img/news/career-large-wide@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/career-large-wide@2x.jpg");
+      }
+    }
+  }
+}
+
+.news__slide:nth-child(3n + 1).news__slide--career {
+  .webp & {
+    @media (min-width: $vp-1440) {
+      background-image: url("../../img/news/career-large-wide@1x.webp");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/career-large-wide@2x.webp");
+      }
+    }
+  }
+
+  .no-webp & {
+    @media (min-width: $vp-1440) {
+      background-image: url("../../img/news/career-large-wide@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/career-large-wide@2x.jpg");
+      }
+    }
+  }
+}
+
+.news__slide:nth-child(3n + 1).news__slide--volunteering {
+  .webp & {
+    @media (min-width: $vp-1440) {
+      background-image: url("../../img/news/volunteering-large-wide@1x.webp");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/volunteering-large-wide@2x.webp");
+      }
+    }
+  }
+
+  .no-webp & {
+    @media (min-width: $vp-1440) {
+      background-image: url("../../img/news/volunteering-large-wide@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/news/volunteering-large-wide@2x.jpg");
+      }
+    }
+  }
+}
+
+.swiper-slide.news__slide {
+  display: flex;
+  width: 290px;
+  min-height: 240px;
+  max-height: 240px;
+
+  @media (min-width: $vp-768) {
+    width: 324px;
+    min-height: 350px;
+    max-height: 350px;
+  }
+
+  @media (min-width: $vp-1440) {
+    width: 286px;
+    min-height: 400px;
+    max-height: initial;
+  }
+}
+
+.swiper-slide.news__slide:nth-child(odd) {
+  min-height: 330px;
+  max-height: 330px;
+
+  @media (min-width: $vp-768) {
+    min-height: 350px;
+    max-height: 350px;
+  }
+
+  @media (min-width: $vp-1440) {
+    min-height: 400px;
+    max-height: initial;
+  }
+}
+
+.news__slide:nth-child(3n + 1) {
+  @media (min-width: $vp-1440) {
+    width: 604px;
+  }
+}
+
+.news__item-angle-bottom {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: -16px;
+    bottom: 0;
+
+    width: 16px;
+    height: 16px;
+
+    background-color: var(--beige, #f0efe9);
+    transform: rotate(-90deg);
+
+    mask-image: url("../__spritemap#sprite-angle-view");
+    mask-position: center;
+    mask-repeat: no-repeat;
+  }
+}
+
+.news__date {
+  display: inline-flex;
+  min-width: 75px;
+  padding: 12px 12px 6px 0;
+
+  font-size: 12px;
+  line-height: 12px;
+  color: var(--primary, #316dc2);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+
+  background-color: var(--beige, #f0efe9);
+  border-radius: 0 12px 0 0;
+
+  @media (min-width: $vp-768) {
+    min-width: 78px;
+  }
+
+  @media (min-width: $vp-1440) {
+    min-width: 75px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: 0;
+
+    width: 16px;
+    height: 16px;
+
+    background-color: var(--beige, #f0efe9);
+    transform: rotate(-90deg);
+
+    mask-image: url("../__spritemap#sprite-angle-view");
+    mask-position: center;
+    mask-repeat: no-repeat;
+  }
+}
+
+.news__slide-title {
+  width: 200px;
+  min-height: 32px;
+  margin: 0;
+  padding: 10px 18px 4px 0;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--primary, #316dc2);
+
+  background-color: var(--beige, #f0efe9);
+  border-radius: 0 12px 0 0;
+
+  @media (min-width: $vp-768) {
+    width: 207px;
+    padding: 10px 18px 6px 0;
+
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $vp-1440) {
+    width: 190px;
+    padding: 10px 21px 4px 0;
+
+    font-size: 24px;
+    line-height: 26px;
+  }
+}
+
+.news__slide:nth-child(3n + 1) .news__slide-title {
+  @media (min-width: $vp-1440) {
+    width: 426px;
+    padding: 18px 18px 6px 0;
+  }
+}
+
+.news__slide-wrapper {
+  position: relative;
+
+  min-width: 263px;
+  min-height: 52px;
+  margin-right: 27px;
+  padding: 13px 10px 10px 0;
+
+  background: var(--beige, #f0efe9);
+  border-radius: 0 12px;
+
+  @media (min-width: $vp-768) {
+    min-width: 240px;
+    margin-right: 84px;
+    padding: 12px 18px 15px 0;
+  }
+
+  @media (min-width: $vp-1440) {
+    margin-right: 44px;
+  }
+}
+
+.news__slide:nth-child(3n + 1) .news__slide-wrapper {
+  @media (min-width: $vp-1440) {
+    width: 468px;
+  }
+}
+
+.news__slide-wrapper p {
+  margin: 0 0 5px;
+  padding-right: 40px;
+
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--text, #484848);
+
+  @media (min-width: $vp-768) {
+    padding-right: 46px;
+
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  @media (min-width: $vp-1440) {
+    padding-right: 45px;
+
+    line-height: 18px;
+  }
+}
+
+.news__slide-wrapper p:last-of-type {
+  margin-bottom: -1px;
+}
+
+.news__slide-link {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: 1px;
+
+  transform: translateY(-50%);
+
+  @media (min-width: $vp-768) {
+    margin: 0;
+    right: 18px;
+  }
+
+  @media (min-width: $vp-1440) {
+    transform: translateY(calc(-50% - 2px));
+  }
+}
+
+.news__slider-buttons {
+  z-index: 1;
+
+  justify-content: space-between;
+  width: 290px;
+
+  @media (min-width: $vp-768) {
+    width: 100%;
+  }
+}
+
+.news__pagination {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+
+  display: flex;
+  max-width: 215px;
+
+  transform: translateX(-50%);
+
+  gap: 0 16px;
+
+  @media (min-width: $vp-768) {
+    column-gap: 20px;
+  }
+
+  @media (min-width: $vp-1440) {
+    bottom: 61px;
+  }
+}
+
+.news__pagination .swiper-pagination-bullet {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 26px;
+  height: 26px;
+  padding: 2px 7px;
+
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+  color: var(--primary, #316dc2);
+  text-transform: uppercase;
+
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  cursor: pointer;
+  opacity: 0.5;
+
+  transition: opacity 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+
+  @media (min-width: $vp-768) {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 16px;
+  }
+
+  &:hover {
+    color: var(--primary, #316dc2);
+
+    background-color: transparent;
+    border-color: var(--primary, #316dc2);
+    opacity: 1;
+  }
+
+  &:focus-visible {
+    color: var(--primary, #316dc2);
+
+    background-color: var(--white, #ffffff);
+    border-color: var(--primary, #316dc2);
+    opacity: 1;
+  }
+
+  &:active {
+    color: var(--white, #ffffff);
+
+    background-color: var(--state-active, #275699);
+    border-color: var(--state-active, #275699);
+    opacity: 1;
+  }
+
+  &:disabled {
+    color: var(--state-disabled, #a9afb7);
+
+    background-color: transparent;
+    border-color: transparent;
+    opacity: 0.5;
+
+    pointer-events: none;
+  }
+}
+
+.news__pagination .swiper-pagination-bullet-active {
+  font-weight: 500;
+  color: var(--white, #ffffff);
+
+  background-color: var(--primary, #316dc2);
+  border-color: var(--primary, #316dc2);
+  opacity: 1;
+
+  pointer-events: none;
+}

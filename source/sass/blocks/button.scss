@@ -1,146 +1,297 @@
 .button {
   position: relative;
-  padding: 18px 71px 20px 19px;
+
+  display: inline-flex;
+  padding: 16px 59px 16px 21px;
 
   font-weight: 500;
-  line-height: 14px;
   font-size: 14px;
-  text-decoration: none;
+  line-height: 14px;
+  font-family: $font-family;
+  color: var(--primary, #316dc2);
   text-transform: uppercase;
-  text-align: left;
-  letter-spacing: 0.28px;
-  color: $color-text-additional;
+  text-decoration: none;
+  letter-spacing: 0.02em;
 
-  background-color: $color-bg-additional;
-  border: 1px solid $color-text-additional;
+  background-color: transparent;
+  border: 1px solid var(--primary, #316dc2);
   border-radius: 30px;
-
   cursor: pointer;
 
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: background-color 0.3s ease;
-  }
-
-  &::before {
-    width: 46px;
-    height: 46px;
-    right: 4px;
-    background-color: $color-bg-accent;
-    border-radius: 44px;
-  }
+  --circle-color: var(--primary, #316dc2);
 
   &:hover {
-    color: $color-text-white;
-    background-color: $color-bg-accent;
+    color: var(--white, #ffffff);
 
-    &::before {
-      background-color: $color-bg-additional;
-    }
+    background-color: var(--primary, #316dc2);
 
-    &::after {
-      background-color: $color-bg-accent;
-    }
+    --circle-color: var(--white, #ffffff);
   }
 
   &:active {
-    color: rgba($color-text-white, 0.3);
+    color: rgba(255, 255, 255, 0.7);
 
-    &::after {
-      background-color: rgba($color-bg-accent, 0.3);
-    }
+    background-color: var(--primary, #316dc2);
+
+    --circle-color: var(--white, #ffffff);
   }
-}
 
+  &:disabled,
+  &--disabled {
+    color: var(--state-disabled, #a9afb7);
 
-.button--arrow {
-  display: inline-block;
-  padding: 16px 59px 16px 21px;
+    border-color: var(--state-disabled, #a9afb7);
 
-  font-size: 12px;
-  line-height: 12px;
+    pointer-events: none;
+
+    --circle-color: var(--state-disabled, #a9afb7);
+  }
 
   &::before {
-    width: 34px;
-    height: 34px;
-    right: 5px;
-  }
-
-  &::after {
-    width: 14px;
-    height: 14px;
-
-    right: 15px;
-    top: 14px;
-
-    transform: rotate(-45deg);
-
-    background-color: $color-bg-additional;
-    mask-image: url("/__spritemap#sprite-arrow-right-view");
-  }
-
-  @media (min-width: $breakpoint-tablet) {
-    padding: 21px 81px 21px 31px;
-
-    font-size: 14px;
-    line-height: 14px;
-
-    &::before {
-      width: 46px;
-      height: 46px;
-      right: 5px;
-    }
-
-    &::after {
-      width: 16px;
-      height: 16px;
-
-      right: 20px;
-      top: 20px;
-
-      transform: rotate(-45deg);
-
-      background-color: $color-bg-additional;
-      mask-image: url("/__spritemap#sprite-arrow-right-view");
-    }
-  }
-}
-
-.button-icon {
-  position: relative;
-  display: block;
-
-  width: 30px;
-  height: 30px;
-
-  background-color: $color-bg-accent;
-  border-radius: 50%;
-
-  &::after {
     content: "";
     position: absolute;
-
     top: 50%;
-    left: 50%;
+    right: 4px;
 
-    transform: translate(-50%, -50%);
+    width: 46px;
+    height: 46px;
+
+    background-color: var(--circle-color);
+    border-radius: 50%;
+    transform: translateY(-50%);
+
+    transition: background-color 0.3s ease;
+  }
+
+  &--arrow {
+    padding-top: 15px;
+    padding-right: 58px;
+    padding-bottom: 15px;
+
+    font-size: 12px;
+    line-height: 12px;
+
+    --arrow-color: var(--white, #ffffff);
+
+    @media (min-width: $vp-768) {
+      padding: 20px 80px 20px 30px;
+
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+
+  &--arrow::before {
+    width: 34px;
+    height: 34px;
+
+    @media (min-width: $vp-768) {
+      width: 46px;
+      height: 46px;
+    }
+  }
+
+  &--arrow::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 14px;
+
+    width: 15px;
+    height: 15px;
+
+    background-color: var(--arrow-color);
+    transform: translateY(-50%) rotate(-45deg);
+    transform-origin: center;
+
+    transition: transform 0.3s ease, background-color 0.3s ease;
+
+    mask-image: url("../__spritemap#sprite-arrow-right-view");
+
+    @media (min-width: $vp-768) {
+      right: 20px;
+    }
+  }
+
+  &--burger {
+    width: 136px;
+    padding: 19px 70px 19px 20px;
+
+    background-color: var(--white, #ffffff);
+
+    transition: width 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+
+    --burger-color: var(--white, #ffffff);
+
+    @media (min-width: $vp-768) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+
+  &--burger::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 4px);
+    right: 19px;
+
+    width: 15px;
+    height: 1px;
+
+    background-color: var(--burger-color);
+    border-radius: 1px;
+    box-shadow: 0 3.5px 0 0 var(--burger-color), 0 7px 0 0 var(--burger-color);
+
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+
+  &--blue-background {
+    color: var(--white, #ffffff);
+
+    border-color: var(--white, #ffffff);
+
+    --arrow-color: var(--primary, #316dc2);
+    --circle-color: var(--white, #ffffff);
   }
 }
 
-.button-icon--arrow {
-  &::after {
-    width: 17px;
-    height: 17px;
+.is-open .button--burger {
+  width: 290px;
 
-    transform: translate(-50%, -50%) rotate(-45deg);
+  color: var(--white, #ffffff);
 
-    background-color: $color-bg-additional;
-    mask-image: url("/__spritemap#sprite-arrow-right-view");
+  background-color: var(--primary, #316dc2);
+  border-color: var(--primary, #316dc2);
+
+  --circle-color: var(--white, #ffffff);
+  --close-color: var(--primary, #316dc2);
+
+  @media (min-width: $vp-768) {
+    width: 286px;
   }
+
+  &::after {
+    top: calc(50% - 10px);
+    right: 17px;
+
+    width: 20px;
+    height: 20px;
+
+    background-color: var(--close-color);
+    box-shadow: none;
+
+    mask-image: url("../__spritemap#sprite-cross-view");
+  }
+}
+
+.is-open .button--burger:hover {
+  --close-color: var(--white, #ffffff);
+}
+
+.is-open .button--burger:focus-visible:hover {
+  --close-color: var(--primary, #316dc2);
+}
+
+.button--arrow:hover {
+  --arrow-color: var(--primary, #316dc2);
+
+  &::after {
+    transform: translateY(-50%) rotate(0deg);
+  }
+}
+
+.button--arrow:focus-visible::after {
+  transform: translateY(-50%) rotate(0deg);
+}
+
+.button--arrow:active {
+  --arrow-color: var(--primary, #316dc2);
+}
+
+.button--arrow:active::after {
+  transform: translateY(-50%) rotate(0deg);
+  opacity: 0.7;
+}
+
+.button--arrow:disabled::after,
+.button--arrow.button--disabled::after {
+  transform: translateY(-50%) rotate(-45deg);
+  opacity: 0.6;
+}
+
+.button--burger:hover {
+  --burger-color: var(--primary, #316dc2);
+}
+
+.button--burger:focus-visible {
+  color: var(--primary, #316dc2);
+
+  background-color: var(--white, #ffffff);
+  border-color: var(--white, #ffffff);
+}
+
+.button--burger:focus-visible:hover {
+  color: var(--white, #ffffff);
+
+  background-color: var(--primary, #316dc2);
+}
+
+.button--burger:focus-visible::after {
+  opacity: 0.7;
+}
+
+.is-open .button--burger:disabled,
+.is-open .button--burger.button--disabled {
+  color: var(--state-disabled, #a9afb7);
+
+  border-color: var(--state-disabled, #a9afb7);
+
+  --burger-color: var(--white, #ffffff);
+  --circle-color: var(--state-disabled, #a9afb7);
+}
+
+.is-open .button--burger:disabled::after,
+.is-open .button--burger.button--disabled::after {
+  opacity: 0.6;
+}
+
+.button--burger:active::after {
+  opacity: 0.7;
+
+  --burger-color: var(--primary, #316dc2);
+}
+
+.button--blue-background:hover {
+  color: var(--primary, #316dc2);
+
+  background-color: var(--white, #ffffff);
+  border-color: var(--white, #ffffff);
+
+  --arrow-color: var(--white, #ffffff);
+  --circle-color: var(--primary, #316dc2);
+}
+
+.button--blue-background:active {
+  color: rgba(49, 109, 194, 0.7);
+
+  background-color: var(--white, #ffffff);
+  border-color: var(--white, #ffffff);
+
+  --arrow-color: var(--white, #ffffff);
+  --circle-color: var(--primary, #316dc2);
+}
+
+.button--blue-background:focus-visible {
+  color: var(--white, #ffffff);
+
+  background-color: var(--primary, #316dc2);
+
+  --arrow-color: var(--primary, #316dc2);
+  --circle-color: var(--white, #ffffff);
+}
+
+.button--blue-background:disabled::after {
+  background-color: var(--white, #ffffff);
 }

@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+
+  object-fit: contain;
+}
+
+:root {
+  --primary: #316dc2;
+  --white: #ffffff;
+  --beige: #f0efe9;
+  --text: #484848;
+  --dark-overlay: rgba(13, 29, 51, 0.4);
+  --blue-overlay: rgba(49, 109, 194, 0.2);
+  --state-disabled: #a9afb7;
+  --state-active: #275699;
+  --state-error: #ff5e66;
+}

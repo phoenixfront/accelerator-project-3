@@ -1,6 +1,7 @@
 .hero__list {
   margin: 0;
   padding: 0;
+
   list-style-type: none;
 }
 
@@ -17,187 +18,114 @@
   background-position: center;
   background-size: cover;
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $vp-768) {
     min-height: 1024px;
     padding: 116px 64px 60px 45px;
   }
 
-  @media (min-width: $breakpoint-desktop) {
+  @media (min-width: $vp-1440) {
     min-height: 800px;
     padding-right: 372px;
     padding-left: 100px;
   }
 
+  @media (min-width: $vp-1440) {
+    min-height: 800px;
+  }
+
+  &--studying-abroad {
+    background-image: url("../img/background/hero-studying-abroad-mobile@1x.jpg");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../img/background/hero-studying-abroad-mobile@2x.jpg");
+    }
+
+    @media (min-width: $vp-768) {
+      background-image: url("../img/background/hero-studying-abroad-tablet@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../img/background/hero-studying-abroad-tablet@2x.jpg");
+      }
+    }
+
+    @media (min-width: $vp-1440) {
+      background-image: url("../img/background/hero-studying-abroad-desktop@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../img/background/hero-studying-abroad-desktop@2x.jpg");
+      }
+    }
+  }
+
+  &--society-contribution {
+    background-image: url("../img/background/hero-society-contribution-mobile@1x.jpg");
+    background-position: left 50% top 40%;
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../img/background/hero-society-contribution-mobile@2x.jpg");
+    }
+
+    @media (min-width: $vp-768) {
+      background-image: url("../img/background/hero-society-contribution-tablet@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../img/background/hero-society-contribution-tablet@2x.jpg");
+      }
+    }
+
+    @media (min-width: $vp-1440) {
+      background-image: url("../img/background/hero-society-contribution-desktop@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../img/background/hero-society-contribution-desktop@2x.jpg");
+      }
+    }
+  }
+
+  &--major-companies {
+    background-image: url("../img/background/hero-major-companies-mobile@1x.jpg");
+    background-position: left 50% top 40%;
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../img/background/hero-major-companies-mobile@2x.jpg");
+    }
+
+    @media (min-width: $vp-768) {
+      background-image: url("../img/background/hero-major-companies-tablet@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../img/background/hero-major-companies-tablet@2x.jpg");
+      }
+    }
+
+    @media (min-width: $vp-1440) {
+      background-image: url("../img/background/hero-major-companies-desktop@1x.jpg");
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../img/background/hero-major-companies-desktop@2x.jpg");
+      }
+    }
+  }
+
   &::before {
     content: "";
     position: absolute;
+
+    background-color: var(--blue-overlay, rgba(49, 109, 194, 0.2));
+
     inset: 0;
-
-    background-color: rgba($color-overlay-photo, 0.2);
-  }
-}
-
-.hero__slide-content--abroad {
-  .webp & {
-    background-image: url("../../img/hero/abroad-small@1x.webp");
-
-    @media (resolution >= 2dppx) {
-      background-image: url("../../img/hero/abroad-small@2x.webp");
-    }
-
-    @media (min-width: $breakpoint-tablet) {
-      background-image: url("../../img/hero/abroad-medium@1x.webp");
-
-      @media (resolution >= 2dppx) {
-        background-image: url("../../img/hero/abroad-medium@2x.webp");
-      }
-    }
-
-    @media (min-width: $breakpoint-desktop) {
-      background-image: url("../../img/hero/abroad-large@1x.webp");
-
-      @media (resolution >= 2dppx) {
-        background-image: url("../../img/hero/abroad-large@2x.webp");
-      }
-    }
-  }
-
-  .no-webp & {
-    background-image: url("../../img/hero/abroad-small@1x.jpg");
-
-    @media (resolution >= 2dppx) {
-      background-image: url("../../img/hero/abroad-small@2x.jpg");
-    }
-
-    @media (min-width: $breakpoint-tablet) {
-      background-image: url("../../img/hero/abroad-medium@1x.jpg");
-
-      @media (resolution >= 2dppx) {
-        background-image: url("../../img/hero/abroad-medium@2x.jpg");
-      }
-    }
-
-    @media (min-width: $breakpoint-desktop) {
-      background-image: url("../../img/hero/abroad-large@1x.jpg");
-
-      @media (resolution >= 2dppx) {
-        background-image: url("../../img/hero/abroad-large@2x.jpg");
-      }
-    }
-  }
-}
-
-.hero__slide-content--volunteer {
-  .webp & {
-    background-image: url("../../img/hero/volunteer-small@1x.webp");
-
-    @media (resolution >= 2dppx) {
-      background-image: url("../../img/hero/volunteer-small@2x.webp");
-    }
-
-    @media (min-width: $breakpoint-tablet) {
-      background-image: url("../../img/hero/volunteer-medium@1x.webp");
-
-      @media (resolution >= 2dppx) {
-        background-image: url("../../img/hero/volunteer-medium@2x.webp");
-      }
-    }
-
-    @media (min-width: $breakpoint-desktop) {
-      background-image: url("../../img/hero/volunteer-large@1x.webp");
-
-      @media (resolution >= 2dppx) {
-        background-image: url("../../img/hero/volunteer-large@2x.webp");
-      }
-    }
-  }
-
-  .no-webp & {
-    background-image: url("../../img/hero/volunteer-small@1x.jpg");
-
-    @media (resolution >= 2dppx) {
-      background-image: url("../../img/hero/volunteer-small@2x.jpg");
-    }
-
-    @media (min-width: $breakpoint-tablet) {
-      background-image: url("../../img/hero/volunteer-medium@1x.jpg");
-
-      @media (resolution >= 2dppx) {
-        background-image: url("../../img/hero/volunteer-medium@2x.jpg");
-      }
-    }
-
-    @media (min-width: $breakpoint-desktop) {
-      background-image: url("../../img/hero/volunteer-large@1x.jpg");
-
-      @media (resolution >= 2dppx) {
-        background-image: url("../../img/hero/volunteer-large@2x.jpg");
-      }
-    }
-  }
-}
-
-.hero__slide-content--companies {
-  .webp & {
-    background-image: url("../../img/hero/companies-small@1x.webp");
-
-    @media (resolution >= 2dppx) {
-      background-image: url("../../img/hero/companies-small@2x.webp");
-    }
-
-    @media (min-width: $breakpoint-tablet) {
-      background-image: url("../../img/hero/companies-medium@1x.webp");
-
-      @media (resolution >= 2dppx) {
-        background-image: url("../../img/hero/companies-medium@2x.webp");
-      }
-    }
-
-    @media (min-width: $breakpoint-desktop) {
-      background-image: url("../../img/hero/companies-large@1x.webp");
-
-      @media (resolution >= 2dppx) {
-        background-image: url("../../img/hero/companies-large@2x.webp");
-      }
-    }
-  }
-
-  .no-webp & {
-    background-image: url("../../img/hero/companies-small@1x.jpg");
-
-    @media (resolution >= 2dppx) {
-      background-image: url("../../img/hero/companies-small@2x.jpg");
-    }
-
-    @media (min-width: $breakpoint-tablet) {
-      background-image: url("../../img/hero/companies-medium@1x.jpg");
-
-      @media (resolution >= 2dppx) {
-        background-image: url("../../img/hero/companies-medium@2x.jpg");
-      }
-    }
-
-    @media (min-width: $breakpoint-desktop) {
-      background-image: url("../../img/hero/companies-large@1x.jpg");
-
-      @media (resolution >= 2dppx) {
-        background-image: url("../../img/hero/companies-large@2x.jpg");
-      }
-    }
   }
 }
 
 .hero__slider-content-wrapper {
-  position: relative;
-
-  @media (min-width: $breakpoint-desktop) {
+  @media (min-width: $vp-1440) {
     width: 968px;
     margin: 0 auto;
   }
 }
 
 .hero__pagination-wrapper {
-  @media (min-width: $breakpoint-desktop) {
+  @media (min-width: $vp-1440) {
     display: flex;
   }
 }
@@ -212,12 +140,12 @@
   margin-right: 40px;
   padding: 10px 16px;
 
-  background-color: $color-bg-additional;
+  background-color: var(--white, #ffffff);
   border-radius: 12px 12px 0 0;
 
   gap: 12px;
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $vp-768) {
     min-width: 100px;
     min-height: 40px;
     padding: 14px 20px;
@@ -225,7 +153,7 @@
     border-radius: 20px 20px 0 0;
   }
 
-  @media (min-width: $breakpoint-desktop) {
+  @media (min-width: $vp-1440) {
     margin-right: auto;
   }
 
@@ -238,14 +166,14 @@
     width: 10px;
     height: 10px;
 
-    background-image: url("../../img/sprite/angle.svg");
-    background-size: cover;
+    background-image: url("../__spritemap#sprite-angle-view");
     background-repeat: no-repeat;
     background-position: center;
     transform: rotate(-90deg);
 
-    @media (min-width: $breakpoint-tablet) {
+    @media (min-width: $vp-768) {
       right: -20px;
+
       width: 20px;
       height: 20px;
     }
@@ -262,15 +190,14 @@
   height: 8px;
   padding: 0;
 
-  background-color: $color-bg-additional;
-  border: 2px solid $color-bg-accent;
+  background-color: var(--white, #ffffff);
+  border: 2px solid var(--primary, #316dc2);
   border-radius: 50%;
-
   cursor: pointer;
 
   transition: background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $vp-768) {
     width: 12px;
     height: 12px;
   }
@@ -278,42 +205,43 @@
   &::before {
     content: "";
     position: absolute;
+    top: 50%;
+    left: 50%;
+
     width: 19px;
     height: 28px;
 
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
   }
 }
 
 .hero__pagination .swiper-pagination-bullet:hover {
-  background-color: $color-btn-main;
-  border-color: $color-btn-white;
+  background-color: var(--primary, #316dc2);
+  border-color: var(--white, #ffffff);
   opacity: 0.7;
 }
 
 .hero__pagination .swiper-pagination-bullet:focus-visible {
-  background-color: $color-btn-main;
-  border-color: $color-btn-main;
+  background-color: var(--primary, #316dc2);
+  border-color: var(--primary, #316dc2);
   opacity: 1;
 }
 
 .hero__pagination .swiper-pagination-bullet:active {
-  background-color: $color-btn-active;
-  border-color: $color-btn-active;
+  background-color: var(--state-active, #275699);
+  border-color: var(--state-active, #275699);
   opacity: 1;
 }
 
-.hero__pagination .swiper-pagination-bullet-active {
-  background-color: $color-btn-active;
-  border-color: $color-btn-active;
+.hero__pagination .swiper-pagination-bullet:disabled {
+  background-color: var(--state-disabled, #a9afb7);
+  border-color: var(--state-disabled, #a9afb7);
+  opacity: 0.5;
 }
 
-.hero__pagination .swiper-pagination-bullet:disabled {
-  background-color: $color-btn-disabled;
-  border-color: $color-btn-disabled;
-  opacity: 0.5;
+.hero__pagination .swiper-pagination-bullet-active {
+  background-color: var(--state-active, #275699);
+  border-color: var(--state-active, #275699);
 }
 
 .hero__slide-title {
@@ -331,7 +259,7 @@
   background-color: var(--white, #ffffff);
   border-radius: 0 16px 16px 0;
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $vp-768) {
     padding: 30px 69px 24px 40px;
 
     font-size: 36px;
@@ -340,7 +268,7 @@
     border-radius: 0 30px 30px 0;
   }
 
-  @media (min-width: $breakpoint-desktop) {
+  @media (min-width: $vp-1440) {
     max-width: 968px;
     padding: 40px 50px 30px;
 
@@ -355,7 +283,7 @@
 
   max-width: 600px;
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $vp-768) {
     display: grid;
     max-width: 775px;
     margin-right: 66px;
@@ -368,7 +296,7 @@
     grid-template-columns: 1fr 198px;
   }
 
-  @media (min-width: $breakpoint-desktop) {
+  @media (min-width: $vp-1440) {
     max-width: 775px;
     margin: 0 auto;
     padding-right: 50px;
@@ -378,7 +306,7 @@
   }
 
   &::before {
-    @media (min-width: $breakpoint-tablet) {
+    @media (min-width: $vp-768) {
       content: "";
       position: absolute;
       top: 0;
@@ -387,10 +315,9 @@
       width: 26px;
       height: 26px;
 
-      background-image: url("../../img/sprite/angle.svg");
+      background-image: url("../__spritemap#sprite-angle-view");
       background-repeat: no-repeat;
       background-position: center;
-      background-size: cover;
     }
   }
 }
@@ -406,12 +333,12 @@
 
   background-color: var(--white, #ffffff);
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $vp-768) {
     margin-right: 0;
     padding: 0;
   }
 
-  @media (min-width: $breakpoint-desktop) {
+  @media (min-width: $vp-1440) {
     line-height: 26px;
   }
 }
@@ -419,7 +346,7 @@
 .hero__slide-wrapper p:last-of-type {
   border-radius: 0 0 14px;
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $vp-768) {
     border-radius: 0;
   }
 }
@@ -433,39 +360,44 @@
   width: 10px;
   height: 10px;
 
-  background-image: url("../../img/sprite/angle.svg");
+  background-image: url("../__spritemap#sprite-angle-view");
   background-repeat: no-repeat;
   background-position: center;
-
-  @media (min-width: $breakpoint-tablet) {
-    width: 20px;
-    height: 20px;
-  }
 }
 
 .hero__button-wrapper {
   position: relative;
-  display: inline-block;
 
-  padding: 9px 14px;
+  margin-right: 106px;
+  padding: 10px 15px;
+
+  background-color: var(--white, #ffffff);
   border-radius: 0 0 14px 14px;
 
-  background-color: $color-bg-additional;
+  @media (min-width: $vp-768) {
+    margin-right: 0;
+    padding: 0;
+  }
+
+  @media (min-width: $vp-1440) {
+    margin-top: 11px;
+  }
 
   &::before {
     content: "";
     position: absolute;
-  }
+    top: 0;
+    right: -10px;
 
-  @media (min-width: $breakpoint-tablet) {
-    position: absolute;
-    right: 91px;
-    bottom: 68px;
-    z-index: 3;
-  }
+    width: 10px;
+    height: 10px;
 
-  @media (min-width: $breakpoint-desktop) {
-    right: 229px;
-    bottom: 36px;
+    background-image: url("../__spritemap#sprite-angle-view");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media (min-width: $vp-768) {
+      display: none;
+    }
   }
 }

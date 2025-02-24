@@ -1,66 +1,57 @@
-import { initAccordions } from '../utils/accordions.js';
+import { createAccordions } from '../utils/accordions.js';
 
-const config = {
-  header: {
-    button: '.header__button',
-    buttonActiveClass: 'header__button--opened',
-    menu: '.header-menu',
-    menuActiveClass: 'header-menu--opened',
-  },
+const header = document.querySelector('.header');
+const openButton = header.querySelector('.header__menu-button');
+const list = header.querySelector('.header__menu-list');
+const accordionButtons = header.querySelectorAll('.header__list-button');
+const focusableUpperListElements = list.querySelectorAll('.header__focusable-item-js');
+const focusableAllListElements = list.querySelectorAll('a, button');
+const menuLinks = list.querySelectorAll('.header__link');
+
+const LIST_PADDING = 70;
+const SUBLIST_PADDING = 100;
+
+const onHeaderClick = (event) => {
+  if(!event.target.closest('.header__menu')) {
+    openButton.click();
+  }
 };
 
-// Menu Burger
-const initBurgerMenu = () => {
-  const burgerButton = document.querySelector(config.header.button);
-  const burgerMenu = document.querySelector(config.header.menu);
-
-  if (!burgerButton || !burgerMenu) {
-    return;
-  }
-
-  const toggleMenu = (isOpening) => {
-    const isExpanded = isOpening ?? burgerButton.getAttribute('aria-expanded') !== 'true';
-
-    burgerButton.setAttribute('aria-expanded', isExpanded);
-    burgerMenu.setAttribute('aria-hidden', !isExpanded);
-
-    burgerButton.classList.toggle(config.header.buttonActiveClass, isExpanded);
-    burgerMenu.classList.toggle(config.header.menuActiveClass, isExpanded);
-  };
-
-  burgerButton.addEventListener('click', () => toggleMenu());
-
-  // Закрытие по ESC
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      toggleMenu(false);
-    }
-  });
-
-  // Закрытие при клике вне меню
-  document.addEventListener('click', (event) => {
-    const isMenuOpen = burgerMenu.classList.contains(config.header.menuActiveClass);
-    if (!isMenuOpen) {
-      return;
-    }
-
-    const isClickInsideMenu = burgerMenu.contains(event.target);
-    const isClickOnButton = burgerButton.contains(event.target);
-
-    if (!isClickInsideMenu && !isClickOnButton) {
-      toggleMenu(false);
-    }
-  });
-
-  // Инициализация ARIA
-  burgerButton.setAttribute('aria-controls', burgerMenu.id);
-  burgerButton.setAttribute('aria-expanded', 'false');
-  burgerMenu.setAttribute('aria-hidden', 'true');
+const onButtonClick = () => {
+  list.style.maxHeight = `${list.scrollHeight + LIST_PADDING + SUBLIST_PADDING}px`;
 };
 
 const initHeader = () => {
-  initBurgerMenu();
-  initAccordions();
+  openButton.addEventListener('click', () => {
+    const isOpen = header.classList.contains('is-open');
+    if (isOpen) {
+      list.style.maxHeight = 0;
+      header.classList.remove('is-open');
+      openButton.classList.remove('button--blue-background');
+      header.removeEventListener('click', onHeaderClick);
+      accordionButtons.forEach((button)=> {
+        button.removeEventListener('click', onButtonClick);
+      });
+      focusableAllListElements.forEach((element) => element.setAttribute('tabindex', '-1'));
+    } else {
+      focusableUpperListElements.forEach((element) => element.setAttribute('tabindex', '0'));
+      list.style.maxHeight = `${list.scrollHeight + LIST_PADDING}px`;
+      header.classList.add('is-open');
+      openButton.classList.add('button--blue-background');
+      header.addEventListener('click', onHeaderClick);
+      accordionButtons.forEach((button)=> {
+        button.addEventListener('click', onButtonClick);
+      });
+    }
+  });
+
+  menuLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      openButton.click();
+    });
+  });
+
+  createAccordions(accordionButtons);
 };
 
-export { initHeader };
+export { initHeader } ;

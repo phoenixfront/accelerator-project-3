@@ -1,0 +1,344 @@
+.faq__container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  background-color: var(--beige, #f0efe9);
+
+  @media (min-width: $vp-768) {
+    max-width: 1128px;
+  }
+
+  @media (min-width: $vp-1440) {
+    max-width: 1440px;
+    padding: 70px 206px 60px;
+  }
+}
+
+.faq__title {
+  margin: 0 0 30px;
+
+  text-align: center;
+
+  @media (min-width: $vp-768) {
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: $vp-1440) {
+    margin-bottom: 71px;
+  }
+}
+
+.faq__list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+
+  gap: 10px;
+}
+
+.faq__item {
+  position: relative;
+
+  overflow: hidden;
+
+  border: 2px solid var(--primary, #316dc2);
+  border-radius: 14px;
+
+  @media (min-width: $vp-768) {
+    border-radius: 16px;
+  }
+}
+
+.faq__question {
+  position: relative;
+
+  width: 100%;
+  margin: 0;
+  padding: 20px 15px;
+
+  text-align: left;
+  color: var(--primary, #316dc2);
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease;
+
+  @media (min-width: $vp-768) {
+    padding: 30px;
+  }
+
+  @media (min-width: $vp-1440) {
+    padding: 40px;
+  }
+
+  &:hover {
+    background-color: var(--color-white, #ffffff);
+  }
+
+  &:focus-visible {
+    background-color: var(--color-white, #ffffff);
+    outline: none;
+  }
+
+  &:active {
+    color: var(--state-active, #275699);
+
+    background-color: var(--color-white, #ffffff);
+  }
+
+  &:disabled {
+    cursor: default;
+
+    pointer-events: none;
+  }
+}
+
+.faq__question.is-active {
+  color: var(--color-white, #ffffff);
+
+  background-color: var(--primary, #316dc2);
+
+  @media (min-width: $vp-768) {
+    padding-bottom: 20px;
+  }
+
+  @media (min-width: $vp-1440) {
+    padding-bottom: 21px;
+  }
+
+  &:active {
+    background-color: var(--state-active, #275699);
+  }
+}
+
+.faq__question b {
+  display: grid;
+  align-items: center;
+  min-height: 40px;
+  margin: 0;
+  padding: 0 55px 0 0;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+
+  transition: color 0.3s ease, background-color 0.3s ease;
+
+  @media (min-width: $vp-768) {
+    padding-right: 50px;
+
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  @media (min-width: $vp-1440) {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+
+.faq__answer {
+  max-height: 0;
+  padding: 0 15px;
+  overflow: hidden;
+
+  color: var(--beige, #f0efe9);
+
+  background-color: transparent;
+
+  transition: max-height 0.3s ease, background-color 0.3s ease;
+
+  @media (min-width: $vp-768) {
+    padding: 0 30px;
+  }
+
+  @media (min-width: $vp-1440) {
+    padding: 0 70px 0 40px;
+  }
+}
+
+.faq__answer p {
+  margin: 0 0 10px;
+  padding: 0;
+
+  font-size: 14px;
+  line-height: 20px;
+
+  @media (min-width: $vp-768) {
+    font-size: 16px;
+  }
+
+  @media (min-width: $vp-1440) {
+    line-height: 26px;
+  }
+}
+
+.faq__answer p:last-of-type {
+  margin-bottom: 0;
+}
+
+.faq__question.is-active + .faq__answer {
+  padding-bottom: 20px;
+
+  background-color: var(--primary, #316dc2);
+
+  @media (min-width: $vp-768) {
+    padding-bottom: 30px;
+  }
+
+  @media (min-width: $vp-1440) {
+    padding-bottom: 40px;
+  }
+}
+
+.faq__question.is-active:active + .faq__answer {
+  background-color: var(--state-active, #275699);
+}
+
+.faq__close-icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+
+  color: var(--color-white, #ffffff);
+
+  background-color: var(--primary, #316dc2);
+  border: 1px solid var(--primary, #316dc2);
+  border-radius: 50%;
+  transform: translateY(-50%);
+
+  transition: background-color 0.3s ease;
+
+  @media (min-width: $vp-768) {
+    top: 30px;
+    right: 30px;
+
+    transform: none;
+  }
+
+  @media (min-width: $vp-1440) {
+    top: 40px;
+    right: 40px;
+  }
+
+  &::before {
+    content: "";
+
+    width: 18px;
+    height: 2px;
+
+    background-color: currentColor;
+
+    transition: background-color 0.3s ease;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 2px;
+    height: 18px;
+
+    background-color: currentColor;
+    transform: translate(-50%, -50%);
+
+    transition: background-color 0.3s ease;
+  }
+}
+
+.faq__question:hover .faq__close-icon {
+  color: var(--primary, #316dc2);
+
+  background-color: transparent;
+  border-color: var(--primary, #316dc2);
+}
+
+.faq__question.is-active:hover .faq__close-icon {
+  color: var(--color-white, #ffffff);
+
+  background-color: transparent;
+  border-color: var(--color-white, #ffffff);
+}
+
+.faq__question.is-active:focus-visible .faq__close-icon {
+  color: var(--color-white, #ffffff);
+
+  background-color: transparent;
+  border-color: var(--color-white, #ffffff);
+}
+
+.faq__question:focus-visible .faq__close-icon {
+  color: var(--primary, #316dc2);
+
+  background-color: transparent;
+  border-color: var(--primary, #316dc2);
+}
+
+.faq__question:disabled .faq__close-icon {
+  color: #dddfe2;
+
+  background-color: var(--state-disabled, #a9afb7);
+  border-color: var(--state-disabled, #a9afb7);
+}
+
+.faq__question.is-active:disabled .faq__close-icon {
+  color: #dddfe2;
+
+  background-color: var(--state-disabled, #a9afb7);
+  border-color: var(--state-disabled, #a9afb7);
+}
+
+.faq__question.is-active .faq__close-icon {
+  color: var(--primary, #316dc2);
+
+  background-color: var(--color-white, #ffffff);
+  border-color: var(--color-white, #ffffff);
+
+  &::after {
+    display: none;
+  }
+}
+
+.faq__question:active .faq__close-icon {
+  color: var(--color-white, #ffffff);
+
+  background-color: var(--state-active, #275699);
+  border-color: var(--state-active, #275699);
+}
+
+.faq__question.is-active:active .faq__close-icon {
+  color: var(--state-active, #275699);
+
+  background-color: var(--color-white, #ffffff);
+  border-color: var(--color-white, #ffffff);
+}
+
+.faq__br-mobile {
+  @media (min-width: $vp-768) {
+    display: none;
+  }
+}
+
+.faq__br-tablet {
+  display: none;
+
+  @media (min-width: $vp-768) {
+    display: block;
+  }
+
+  @media (min-width: $vp-1440) {
+    display: none;
+  }
+}

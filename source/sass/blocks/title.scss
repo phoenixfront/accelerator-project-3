@@ -1,0 +1,15 @@
+.title {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  color: var(--primary, #316dc2);
+
+  @media (min-width: $vp-768) {
+    font-size: 34px;
+    line-height: 50px;
+  }
+
+  @media (min-width: $vp-1440) {
+    font-size: 50px;
+  }
+}
